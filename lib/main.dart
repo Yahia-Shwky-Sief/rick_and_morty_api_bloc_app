@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:rick_and_morty_api_bloc_app/app_router.dart';
+import 'app_router.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp(appRouter: AppRouter()));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  
+  final AppRouter appRouter;
+
+  const MyApp({super.key, required this.appRouter});
+
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      onGenerateRoute: AppRouter.onGenerateRoute,
+      onGenerateRoute: appRouter.onGenerateRoute,
     );
   }
 }

@@ -5,6 +5,16 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Rick and Morty API Bloc App'),
+      ),
+      body: Column(
+        children: const [
+          Text('Characters Screen'),
+          Text('Character Details Screen'),
+        ],
+      ),
+    );  
   }
 }
